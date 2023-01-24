@@ -23,9 +23,9 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     children: ReactNode;
   };
 
-export const Button = ({ children, variant, ...rest }: ButtonProps) => {
+export const Button = ({ children, variant, size, ...rest }: ButtonProps) => {
   return (
-    <button className={btnStyles({ variant })} {...rest}>
+    <button className={btnStyles({ variant, size })} {...rest}>
       {children}
     </button>
   );

@@ -34,4 +34,10 @@ describe('<Button/>', () => {
     const btn = screen.getByRole('button');
     expect(btn).toHaveClass('btn-primary');
   });
+
+  it('should render with right class when size is passed', () => {
+    render(<Button size="lg">teste</Button>);
+    const btn = screen.getByRole('button');
+    expect(btn).toHaveClass('btn-lg');
+  });
 });
