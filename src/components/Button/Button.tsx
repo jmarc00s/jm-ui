@@ -18,11 +18,10 @@ const btnStyles = cva(['btn'], {
   },
 });
 
-interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof btnStyles> {
-  children: ReactNode;
-}
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof btnStyles> & {
+    children: ReactNode;
+  };
 
 export const Button = ({ children, variant, ...rest }: ButtonProps) => {
   return (
