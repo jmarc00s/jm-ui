@@ -5,5 +5,9 @@ export type EndProps = {
 };
 
 export const End = ({ children }: EndProps): ReactElement => {
-  return <div className="navbar-end">{children}</div>;
+  return (
+    <div data-testid="navbar-end" className="navbar-end">
+      {children}
+    </div>
+  );
 };

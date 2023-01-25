@@ -21,7 +21,12 @@ export type NavbarProps = HTMLAttributes<HTMLDivElement> &
 
 const Navbar = ({ children, color, className }: NavbarProps): ReactElement => {
   return (
-    <div className={`${navbarStyles({ color })} ${className}`}>{children}</div>
+    <div
+      data-testid="navbar"
+      className={`${navbarStyles({ color })} ${className}`}
+    >
+      {children}
+    </div>
   );
 };
 

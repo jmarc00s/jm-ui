@@ -5,5 +5,9 @@ export type StartProps = {
 };
 
 export const Start = ({ children }: StartProps): ReactElement => {
-  return <div className="navbar-start">{children}</div>;
+  return (
+    <div data-testid="navbar-start" className="navbar-start">
+      {children}
+    </div>
+  );
 };

@@ -5,5 +5,9 @@ export type CenterProps = {
 };
 
 export const Center = ({ children }: CenterProps): ReactElement => {
-  return <div className="navbar-center">{children}</div>;
+  return (
+    <div data-testid="navbar-center" className="navbar-center">
+      {children}
+    </div>
+  );
 };
