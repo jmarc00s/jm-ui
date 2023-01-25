@@ -16,7 +16,8 @@
       "import": "./dist/jm-ui.es.js",
       "require": "./dist/jm-ui.umd.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./class-variance-authority": "./node_modules/class-variance-authority"
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
@@ -28,7 +29,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prettier": "prettier",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest --coverage"
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",

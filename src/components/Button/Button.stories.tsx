@@ -1,4 +1,5 @@
-import { ComponentStory, StoryFn } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
+import type { ButtonProps } from './Button';
 
 import { Button } from './Button';
 
@@ -9,18 +10,11 @@ export default {
   },
 };
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.args = {
+Default.args = {
   children: 'Button',
-  variant: 'primary',
-};
-
-export const Secondary = Template.bind({});
-
-Secondary.args = {
-  children: 'Button',
-  variant: 'secondary',
+  size: 'sm',
 };
