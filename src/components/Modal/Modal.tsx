@@ -36,13 +36,14 @@ const Modal = ({
 
   return (
     <section
+      data-testid="modal-overlay"
       onClick={handleClickOutside}
       className={`modal ${isOpen ? 'modal-open' : ''} ${
         className?.length ? className : ''
       }`}
       {...rest}
     >
-      <div className="modal-box p-0" ref={modalBody}>
+      <div className="modal-box p-0" ref={modalBody} data-testid="modal-body">
         {!!title?.length && <Toolbar title={title} onClose={onClose} />}
         <div className="p-8">{children}</div>
       </div>

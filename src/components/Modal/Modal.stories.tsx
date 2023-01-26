@@ -1,4 +1,5 @@
 import { StoryFn } from '@storybook/react';
+import { Button } from '../Button';
 import { Modal, ModalProps } from './Modal';
 
 export default {
@@ -10,6 +11,13 @@ export default {
   },
 };
 
-const Template: StoryFn<ModalProps> = (args) => <Modal {...args}>Body</Modal>;
+const Template: StoryFn<ModalProps> = (args) => (
+  <Modal {...args}>
+    Body
+    <Modal.Action className="justify-end">
+      <Button>Teste</Button>
+    </Modal.Action>
+  </Modal>
+);
 
 export const Default = Template.bind({});
