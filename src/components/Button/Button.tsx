@@ -8,6 +8,7 @@ const btnStyles = cva(['btn'], {
       secondary: ['btn-secondary'],
       success: ['btn-success'],
       error: ['btn-error'],
+      ghost: ['btn-ghost'],
     },
     size: {
       xs: ['btn-xs'],
@@ -22,9 +23,18 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
     children: ReactNode;
   };
 
-export const Button = ({ children, variant, size, ...rest }: ButtonProps) => {
+export const Button = ({
+  children,
+  variant,
+  size,
+  className,
+  ...rest
+}: ButtonProps) => {
   return (
-    <button className={btnStyles({ variant, size })} {...rest}>
+    <button
+      className={`${btnStyles({ variant, size })} ${className}`}
+      {...rest}
+    >
       {children}
     </button>
   );
