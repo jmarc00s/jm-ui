@@ -5,5 +5,9 @@ export type BodyProps = AllHTMLAttributes<HTMLHeadingElement> & {
 };
 
 export const Body = ({ children, className }: BodyProps): ReactElement => {
-  return <div className={`card-body ${className}`}>{children}</div>;
+  return (
+    <div data-testid="card-body" className={`card-body ${className}`}>
+      {children}
+    </div>
+  );
 };

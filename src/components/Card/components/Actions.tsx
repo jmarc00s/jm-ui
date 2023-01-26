@@ -5,5 +5,9 @@ export type ActionsType = AllHTMLAttributes<HTMLHeadingElement> & {
 };
 
 export const Actions = ({ children, className }: ActionsType): ReactElement => {
-  return <div className={`card-actions ${className}`}>{children}</div>;
+  return (
+    <div data-testid="card-actions" className={`card-actions ${className}`}>
+      {children}
+    </div>
+  );
 };

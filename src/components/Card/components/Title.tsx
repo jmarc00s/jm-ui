@@ -10,7 +10,11 @@ export const Title = ({
   ...rest
 }: TitleProps): ReactElement => {
   return (
-    <h2 className={`card-title ${className}`} {...rest}>
+    <h2
+      data-testid="card-title"
+      className={`card-title ${className}`}
+      {...rest}
+    >
       {children}
     </h2>
   );
