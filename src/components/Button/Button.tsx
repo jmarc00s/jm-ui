@@ -13,7 +13,6 @@ const btnStyles = cva(['btn'], {
       xs: ['btn-xs'],
       sm: ['btn-sm'],
       lg: ['btn-lg'],
-      xl: ['btn-xl'],
     },
   },
 });

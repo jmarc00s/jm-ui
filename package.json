@@ -17,7 +17,8 @@
       "require": "./dist/jm-ui.umd.js",
       "types": "./dist/index.d.ts"
     },
-    "./class-variance-authority": "./node_modules/class-variance-authority"
+    "./class-variance-authority": "./node_modules/class-variance-authority",
+    "./react": "./node_modules/react"
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
