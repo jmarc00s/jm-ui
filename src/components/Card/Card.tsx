@@ -1,9 +1,22 @@
-import React, { ReactNode } from 'react';
+import React, { AllHTMLAttributes, ReactNode } from 'react';
+import { Actions } from './components/Actions';
+import { Body } from './components/Body';
+import { Title } from './components/Title';
 
-export type CardProps = {
+export type CardProps = AllHTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
 };
 
-export const Card = ({ children }: CardProps) => {
-  return <article className="card">{children}</article>;
+const Card = ({ children, className, ...rest }: CardProps) => {
+  return (
+    <article className={`card shadow-xl ${className}`} {...rest}>
+      {children}
+    </article>
+  );
 };
+
+Card.Title = Title;
+Card.Body = Body;
+Card.Actions = Actions;
+
+export { Card };
