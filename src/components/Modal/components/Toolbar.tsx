@@ -11,9 +11,11 @@ export const Toolbar = ({
   onClose,
 }: ModalToolbarProps): ReactElement => {
   return (
-    <div className="w-full flex items-center justify-between">
+    <div className="w-full flex items-center justify-between bg-base-300 px-4 py-2">
       <h1 className="text-xl font-semibold">{title}</h1>
-      <Button onClick={onClose}>X</Button>
+      <Button variant="ghost" className="rounded" onClick={onClose}>
+        x
+      </Button>
     </div>
   );
 };

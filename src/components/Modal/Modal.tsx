@@ -1,13 +1,19 @@
-import React, { AllHTMLAttributes, ReactElement, ReactNode } from 'react';
+import React, {
+  AllHTMLAttributes,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+} from 'react';
 
 import { Action } from './components/Action';
 import { Toolbar } from './components/Toolbar';
 
 export type ModalProps = AllHTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
-  closeOnOutsideClick: boolean;
   onClose: () => void;
   isOpen: boolean;
+  onClickOutside?: () => void;
   title?: string;
 };
 
@@ -16,18 +22,29 @@ const Modal = ({
   onClose,
   className,
   isOpen = false,
-  closeOnOutsideClick = false,
+  onClickOutside,
   title,
   ...rest
 }: ModalProps): ReactElement => {
+  const modalBody = useRef<HTMLDivElement | null>(null);
+
+  const handleClickOutside = ({ target }: React.MouseEvent<HTMLElement>) => {
+    if (!modalBody?.current?.contains(target as Node)) {
+      onClickOutside?.();
+    }
+  };
+
   return (
     <section
-      className={`modal ${isOpen ? 'modal-open' : ''} ${className}`}
+      onClick={handleClickOutside}
+      className={`modal ${isOpen ? 'modal-open' : ''} ${
+        className?.length ? className : ''
+      }`}
       {...rest}
     >
-      <div className="modal-box">
+      <div className="modal-box p-0" ref={modalBody}>
         {!!title?.length && <Toolbar title={title} onClose={onClose} />}
-        {children}
+        <div className="p-8">{children}</div>
       </div>
     </section>
   );

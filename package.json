@@ -18,7 +18,8 @@
       "types": "./dist/index.d.ts"
     },
     "./class-variance-authority": "./node_modules/class-variance-authority",
-    "./react": "./node_modules/react"
+    "./react": "./node_modules/react",
+    "./react-dom/client": "./node_modules/react-dom/client"
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
