@@ -1,4 +1,6 @@
-type ColorType = {
+export const returnColorClasses = (
+  prefix: string
+): {
   primary: string[];
   secondary: string[];
   success: string[];
@@ -6,9 +8,8 @@ type ColorType = {
   accent: string[];
   warning: string[];
   info: string[];
-};
-
-export const returnColorClasses = (prefix: string): ColorType => ({
+  ghost: string[];
+} => ({
   primary: [`${prefix}-primary`],
   secondary: [`${prefix}-secondary`],
   success: [`${prefix}-success`],
@@ -16,4 +17,5 @@ export const returnColorClasses = (prefix: string): ColorType => ({
   accent: [`${prefix}-accent`],
   warning: [`${prefix}-warning`],
   info: [`${prefix}-info`],
+  ghost: [`${prefix}-ghost`],
 });
