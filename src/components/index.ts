@@ -5,3 +5,5 @@ export * from './Modal';
 export * from './Navbar';
 export * from './Checkbox';
 export * from './Badge';
+export * from './Alert';
+export * from './ProgressBar';
