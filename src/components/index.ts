@@ -7,3 +7,4 @@ export * from './Checkbox';
 export * from './Badge';
 export * from './Alert';
 export * from './ProgressBar';
+export * from './Divider';
