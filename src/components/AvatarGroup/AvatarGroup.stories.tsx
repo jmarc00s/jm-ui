@@ -31,6 +31,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   avatars,
+  size: 'xs',
 };
 
 export const WithCounter = Template.bind({});
