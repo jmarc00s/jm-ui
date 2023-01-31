@@ -13,7 +13,7 @@ const avatarStyles = cva([], {
 });
 
 export type AvatarProps = VariantProps<typeof avatarStyles> & {
-  alt: string;
+  title: string;
   imgSrc: string;
   rounded?: boolean;
 };
@@ -21,7 +21,7 @@ export type AvatarProps = VariantProps<typeof avatarStyles> & {
 export const Avatar = ({
   imgSrc,
   size,
-  alt,
+  title,
   rounded = true,
 }: AvatarProps): ReactElement => {
   return (
@@ -30,7 +30,7 @@ export const Avatar = ({
         data-testid="image-container"
         className={`${avatarStyles({ size })} ${rounded ? 'rounded-full' : ''}`}
       >
-        <img alt={alt} src={imgSrc} />
+        <img alt={title} src={imgSrc} title={title} />
       </div>
     </div>
   );

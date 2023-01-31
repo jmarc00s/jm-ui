@@ -4,7 +4,7 @@ import { Avatar } from './Avatar';
 
 const props = {
   imgSrc: 'https://randomuser.me/api/portraits/women/78.jpg',
-  alt: 'Woman avatar',
+  title: 'Woman avatar',
 };
 
 describe('<Avatar />', () => {

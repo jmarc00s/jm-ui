@@ -12,5 +12,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   imgSrc: 'https://randomuser.me/api/portraits/women/78.jpg',
-  alt: 'Woman avatar',
+  title: 'Woman avatar',
 };
