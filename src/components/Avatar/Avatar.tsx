@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import React, { ReactElement } from 'react';
 
-const avatarStyles = cva([], {
+export const avatarStyles = cva([], {
   variants: {
     size: {
       xs: ['w-8'],
