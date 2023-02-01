@@ -8,7 +8,6 @@ export const returnColorClasses = (
   accent: string[];
   warning: string[];
   info: string[];
-  ghost: string[];
 } => ({
   primary: [`${prefix}-primary`],
   secondary: [`${prefix}-secondary`],
@@ -17,5 +16,4 @@ export const returnColorClasses = (
   accent: [`${prefix}-accent`],
   warning: [`${prefix}-warning`],
   info: [`${prefix}-info`],
-  ghost: [`${prefix}-ghost`],
 });
