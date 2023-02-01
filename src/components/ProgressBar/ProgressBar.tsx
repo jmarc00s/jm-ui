@@ -8,7 +8,10 @@ const progressStyles = cva(['progress'], {
   },
 });
 
-export type ProgressBarProps = ProgressHTMLAttributes<HTMLProgressElement> &
+export type ProgressBarProps = Omit<
+  ProgressHTMLAttributes<HTMLProgressElement>,
+  'color'
+> &
   VariantProps<typeof progressStyles> & {
     value?: number;
   };
