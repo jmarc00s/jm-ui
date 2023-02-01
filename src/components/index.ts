@@ -11,3 +11,4 @@ export * from './Modal';
 export * from './Navbar';
 export * from './ProgressBar';
 export * from './Radio';
+export * from './Range';
