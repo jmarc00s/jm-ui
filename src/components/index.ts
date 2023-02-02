@@ -7,6 +7,7 @@ export * from './Card';
 export * from './Checkbox';
 export * from './Divider';
 export * from './Input';
+export * from './Link';
 export * from './Modal';
 export * from './Navbar';
 export * from './ProgressBar';
