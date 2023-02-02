@@ -7,10 +7,10 @@ const radioStyles = cva(['radio'], {
     color: returnColorClasses('radio'),
     size: returnSizeClasses('radio'),
   },
-  // defaultVariants: {
-  //   color: 'primary',
-  //   size: 'md',
-  // },
+  defaultVariants: {
+    color: 'primary',
+    size: 'md',
+  },
 });
 
 export type RadioProps = Omit<
