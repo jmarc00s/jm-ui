@@ -19,7 +19,8 @@
     },
     "./class-variance-authority": "./node_modules/class-variance-authority",
     "./react": "./node_modules/react",
-    "./react-dom/client": "./node_modules/react-dom/client"
+    "./react-dom/client": "./node_modules/react-dom/client",
+    "./classnames": "./node_modules/classnames"
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
@@ -37,19 +38,20 @@
   "dependencies": {
     "autoprefixer": "^10.4.13",
     "class-variance-authority": "^0.4.0",
-    "daisyui": "^2.47.0",
+    "classnames": "^2.3.2",
+    "daisyui": "^2.42.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": ">=16",
+    "react-dom": ">=16",
     "tailwindcss": "^3.2.4"
   },
   "peerDependencies": {
+    "class-variance-authority": "^0.4.0",
     "daisyui": "^2.42.1",
     "react": ">=16",
     "react-dom": ">=16",
-    "tailwindcss": "^3.2.4",
-    "class-variance-authority": "^0.4.0"
+    "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -57,6 +59,7 @@
     "@storybook/addon-essentials": "^7.0.0-beta.31",
     "@storybook/addon-interactions": "^7.0.0-beta.31",
     "@storybook/addon-links": "^7.0.0-beta.31",
+    "@storybook/blocks": "^7.0.0-beta.31",
     "@storybook/react": "^7.0.0-beta.31",
     "@storybook/react-vite": "^7.0.0-beta.31",
     "@storybook/testing-library": "^0.0.14-next.1",
@@ -68,6 +71,7 @@
     "@vitest/coverage-c8": "^0.28.1",
     "babel-loader": "^8.3.0",
     "jsdom": "^21.1.0",
+    "prop-types": "^15.8.1",
     "storybook": "^7.0.0-beta.31",
     "typescript": "^4.9.3",
     "vite": "^4.0.0",
