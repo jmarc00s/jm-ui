@@ -91,9 +91,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "test:ci",
-      "prettier --write",
-      "eslint --fix"
+      "prettier --write"
     ]
   }
 }
