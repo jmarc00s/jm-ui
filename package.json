@@ -31,9 +31,11 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prettier": "prettier",
+    "prettier": "prettier src/**/*.{js,jsx,ts,tsx} --check",
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "test:ci": "vitest run",
+    "prepare": "husky install"
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
@@ -70,7 +72,15 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.28.1",
     "babel-loader": "^8.3.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.0",
     "jsdom": "^21.1.0",
+    "lint-staged": "^13.1.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.0-beta.31",
     "typescript": "^4.9.3",
@@ -78,5 +88,12 @@
     "vite-plugin-dts": "^1.7.1",
     "vite-tsconfig-paths": "^4.0.5",
     "vitest": "^0.28.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "test:ci",
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
