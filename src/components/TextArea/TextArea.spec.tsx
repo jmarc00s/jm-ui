@@ -25,14 +25,14 @@ describe('<TextArea /> ', () => {
   });
 
   it('should render without resize', () => {
-    render(<TextArea bordered />);
+    render(<TextArea bordered resizable={false} />);
     expect(screen.getByRole('textbox')).toHaveClass('resize-none');
   });
 
   it('should render with error when error is present', () => {
     const error = 'Im an error';
     render(<TextArea error={error} />);
-    expect(screen.getByRole('textbox')).toHaveClass('resize-none');
+    expect(screen.getByRole('textbox')).toHaveClass('textarea-error');
   });
 
   it('should render error message when error is present', () => {
