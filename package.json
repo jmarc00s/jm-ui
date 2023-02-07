@@ -35,7 +35,7 @@
     "prettier:fix": "prettier src/**/*.{js,jsx,ts,tsx} --write",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "test:ci": "vitest run",
+    "test:ci": "vitest --run",
     "prepare": "husky install",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}"
   },
@@ -96,7 +96,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run test:ci",
+      "npm run test",
       "prettier --write",
       "npm run lint -- --fix"
     ]
