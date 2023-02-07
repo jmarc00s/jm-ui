@@ -1,7 +1,7 @@
 {
   "name": "@jmarc00s/jm-ui",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/components/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
