@@ -96,7 +96,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write"
+      "npm run test:ci",
+      "prettier --write",
+      "npm run lint -- --fix"
     ]
   }
 }
