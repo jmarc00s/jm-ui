@@ -7,7 +7,7 @@ describe('<Breadcrumbs />', () => {
     render(
       <Breadcrumbs>
         <Breadcrumbs.Item>Item 1</Breadcrumbs.Item>
-      </Breadcrumbs>
+      </Breadcrumbs>,
     );
 
     expect(screen.getByText('Item 1')).toBeVisible();

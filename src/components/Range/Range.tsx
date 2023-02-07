@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import React, { InputHTMLAttributes, ReactElement, ReactNode } from 'react';
+import React, { InputHTMLAttributes, ReactElement } from 'react';
 import { returnColorClasses, returnSizeClasses } from 'src/utils';
 import { RangeSteps } from './components/RangeSteps';
 

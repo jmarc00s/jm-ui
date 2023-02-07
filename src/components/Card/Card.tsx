@@ -7,13 +7,11 @@ export type CardProps = AllHTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
 };
 
-const Card = ({ children, className, ...rest }: CardProps) => {
-  return (
-    <article className={`card shadow-xl ${className}`} {...rest}>
-      {children}
-    </article>
-  );
-};
+const Card = ({ children, className, ...rest }: CardProps) => (
+  <article className={`card shadow-xl ${className}`} {...rest}>
+    {children}
+  </article>
+);
 
 Card.Title = Title;
 Card.Body = Body;

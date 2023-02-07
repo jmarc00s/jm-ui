@@ -1,11 +1,18 @@
 {
-    "extends": ["airbnb-base"],
-    "env": {
-      "node": true,
-      "es6": true,
-      "browser": true
-    },
-    "rules": {
-      "no-console": "off"
-    }
+  "extends": ["airbnb-base", "airbnb-typescript"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-console": "off",
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": 0,
+    "indent": "off",
+    "@typescript-eslint/indent": "off"
   }
+}

@@ -42,37 +42,33 @@ export const Input = ({
   id,
   errorMessage,
   ...rest
-}: InputProps): ReactElement => {
-  return (
-    <>
-      {!!label?.length && (
-        <label className="label" htmlFor={id}>
-          <span
-            className={`label-text ${errorMessage?.length && 'text-error'}`}
-          >
-            {label}
-          </span>
-        </label>
-      )}
-      <input
-        data-testid="input"
-        className={`${
-          errorMessage?.length && 'input-error placeholder:text-error'
-        } ${inputStyles({
-          variant,
-          color,
-          size,
-        })}`}
-        {...rest}
-        size={htmlSize}
-      />
-      {!!errorMessage?.length && (
-        <label className="label">
-          <span className="label-text-alt text-error text-xs">
-            {errorMessage}
-          </span>
-        </label>
-      )}
-    </>
-  );
-};
+}: InputProps): ReactElement => (
+  <>
+    {!!label?.length && (
+      <label className="label" htmlFor={id}>
+        <span className={`label-text ${errorMessage?.length && 'text-error'}`}>
+          {label}
+        </span>
+      </label>
+    )}
+    <input
+      data-testid="input"
+      className={`${
+        errorMessage?.length && 'input-error placeholder:text-error'
+      } ${inputStyles({
+        variant,
+        color,
+        size,
+      })}`}
+      {...rest}
+      size={htmlSize}
+    />
+    {!!errorMessage?.length && (
+      <label className="label">
+        <span className="label-text-alt text-error text-xs">
+          {errorMessage}
+        </span>
+      </label>
+    )}
+  </>
+);

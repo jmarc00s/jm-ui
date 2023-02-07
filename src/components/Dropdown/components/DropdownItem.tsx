@@ -8,10 +8,8 @@ type DropdownItemProps = {
 export const DropdownItem = ({
   children,
   onClick,
-}: DropdownItemProps): ReactElement => {
-  return (
-    <li onClick={onClick}>
-      <a>{children}</a>
-    </li>
-  );
-};
+}: DropdownItemProps): ReactElement => (
+  <li onClick={onClick}>
+    <a>{children}</a>
+  </li>
+);

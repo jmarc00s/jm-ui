@@ -19,7 +19,7 @@ describe('<Modal>', () => {
     render(
       <Modal {...props} title={title}>
         Modal
-      </Modal>
+      </Modal>,
     );
 
     expect(screen.getByTestId('modal-toolbar')).toBeVisible();
@@ -29,7 +29,7 @@ describe('<Modal>', () => {
     render(
       <Modal {...props} isOpen>
         Modal
-      </Modal>
+      </Modal>,
     );
 
     expect(screen.getByTestId('modal-overlay')).toHaveClass('modal-open');
@@ -40,7 +40,7 @@ describe('<Modal>', () => {
     render(
       <Modal {...props} isOpen className={paddingClass}>
         Modal
-      </Modal>
+      </Modal>,
     );
 
     expect(screen.getByTestId('modal-overlay')).toHaveClass(paddingClass);
@@ -51,7 +51,7 @@ describe('<Modal>', () => {
     render(
       <Modal {...props} onClickOutside={onClickOutside}>
         Modal
-      </Modal>
+      </Modal>,
     );
 
     const overlay = screen.getByTestId('modal-overlay');
@@ -66,7 +66,7 @@ describe('<Modal>', () => {
     render(
       <Modal {...props} onClickOutside={onClickOutside}>
         Modal
-      </Modal>
+      </Modal>,
     );
 
     const body = screen.getByTestId('modal-body');

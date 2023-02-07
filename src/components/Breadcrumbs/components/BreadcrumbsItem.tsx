@@ -8,10 +8,8 @@ type BreadcrumbsItemProps = {
 export const BreadcrumbsItem = ({
   children,
   onClick,
-}: BreadcrumbsItemProps): ReactElement => {
-  return (
-    <li onClick={onClick}>
-      <a>{children}</a>
-    </li>
-  );
-};
+}: BreadcrumbsItemProps): ReactElement => (
+  <li onClick={onClick}>
+    <a>{children}</a>
+  </li>
+);

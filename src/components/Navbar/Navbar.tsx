@@ -19,16 +19,14 @@ export type NavbarProps = HTMLAttributes<HTMLDivElement> &
     children: ReactNode;
   };
 
-const Navbar = ({ children, color, className }: NavbarProps): ReactElement => {
-  return (
-    <div
-      data-testid="navbar"
-      className={`${navbarStyles({ color })} ${className}`}
-    >
-      {children}
-    </div>
-  );
-};
+const Navbar = ({ children, color, className }: NavbarProps): ReactElement => (
+  <div
+    data-testid="navbar"
+    className={`${navbarStyles({ color })} ${className}`}
+  >
+    {children}
+  </div>
+);
 
 Navbar.Start = Start;
 Navbar.Center = Center;

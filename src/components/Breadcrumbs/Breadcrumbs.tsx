@@ -5,13 +5,11 @@ export type BreadcrumbsProps = {
   children: ReactNode;
 };
 
-const Breadcrumbs = ({ children }: BreadcrumbsProps): ReactElement => {
-  return (
-    <div className="text-sm breadcrumbs">
-      <ul>{children}</ul>
-    </div>
-  );
-};
+const Breadcrumbs = ({ children }: BreadcrumbsProps): ReactElement => (
+  <div className="text-sm breadcrumbs">
+    <ul>{children}</ul>
+  </div>
+);
 
 Breadcrumbs.Item = BreadcrumbsItem;
 

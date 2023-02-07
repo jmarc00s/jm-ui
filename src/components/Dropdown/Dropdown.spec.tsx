@@ -15,7 +15,6 @@ const element = (
 describe('<Dropdown />', () => {
   it('should render Dropdown component', () => {
     render(element);
-    render;
     expect(screen.getByText('dropdown')).toBeVisible();
   });
 

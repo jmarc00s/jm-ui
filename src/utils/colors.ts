@@ -1,5 +1,5 @@
 export const returnColorClasses = (
-  prefix: string
+  prefix: string,
 ): {
   primary: string[];
   secondary: string[];

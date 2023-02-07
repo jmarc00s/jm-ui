@@ -27,18 +27,16 @@ export const Radio = ({
   id,
   label,
   ...rest
-}: RadioProps): ReactElement => {
-  return (
-    <div className="form-control">
-      <label className="label cursor-pointer" htmlFor={id}>
-        <input
-          id={id}
-          type="radio"
-          {...rest}
-          className={`${radioStyles({ color, size })}`}
-        />
-        {!!label?.length && <span className="label-text ml-4">{label}</span>}
-      </label>
-    </div>
-  );
-};
+}: RadioProps): ReactElement => (
+  <div className="form-control">
+    <label className="label cursor-pointer" htmlFor={id}>
+      <input
+        id={id}
+        type="radio"
+        {...rest}
+        className={`${radioStyles({ color, size })}`}
+      />
+      {!!label?.length && <span className="label-text ml-4">{label}</span>}
+    </label>
+  </div>
+);

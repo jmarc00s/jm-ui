@@ -2,7 +2,6 @@ import React, {
   AllHTMLAttributes,
   ReactElement,
   ReactNode,
-  useEffect,
   useRef,
 } from 'react';
 

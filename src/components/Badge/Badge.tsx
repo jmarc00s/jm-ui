@@ -34,14 +34,12 @@ export const Badge = ({
   variant,
   className,
   ...rest
-}: BadgeProps) => {
-  return (
-    <span
-      data-testid="badge"
-      className={badgeStyles({ color, size, variant })}
-      {...rest}
-    >
-      {children}
-    </span>
-  );
-};
+}: BadgeProps) => (
+  <span
+    data-testid="badge"
+    className={badgeStyles({ color, size, variant })}
+    {...rest}
+  >
+    {children}
+  </span>
+);

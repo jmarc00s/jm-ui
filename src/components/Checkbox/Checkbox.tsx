@@ -36,19 +36,17 @@ export const Checkbox = ({
   color,
   size,
   ...rest
-}: CheckboxProps) => {
-  return (
-    <div className="form-control">
-      <label className="label cursor-pointer" htmlFor={id}>
-        <input
-          data-testid="checkbox"
-          id={id}
-          type="checkbox"
-          className={checkboxStyles({ color, size })}
-          {...rest}
-        />
-        <span className="label-text ml-4">{label}</span>
-      </label>
-    </div>
-  );
-};
+}: CheckboxProps) => (
+  <div className="form-control">
+    <label className="label cursor-pointer" htmlFor={id}>
+      <input
+        data-testid="checkbox"
+        id={id}
+        type="checkbox"
+        className={checkboxStyles({ color, size })}
+        {...rest}
+      />
+      <span className="label-text ml-4">{label}</span>
+    </label>
+  </div>
+);

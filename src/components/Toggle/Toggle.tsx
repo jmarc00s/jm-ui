@@ -26,18 +26,16 @@ export const Toggle = ({
   label,
   id,
   ...rest
-}: ToggleProps): ReactElement => {
-  return (
-    <>
-      <label className="label cursor-pointer" htmlFor={id}>
-        <input
-          id={id}
-          type="checkbox"
-          className={toggleStyles({ color, size })}
-          {...rest}
-        />
-        {!!label?.length && <span className="label-text ml-4">{label}</span>}
-      </label>
-    </>
-  );
-};
+}: ToggleProps): ReactElement => (
+  <>
+    <label className="label cursor-pointer" htmlFor={id}>
+      <input
+        id={id}
+        type="checkbox"
+        className={toggleStyles({ color, size })}
+        {...rest}
+      />
+      {!!label?.length && <span className="label-text ml-4">{label}</span>}
+    </label>
+  </>
+);

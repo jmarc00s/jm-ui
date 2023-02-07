@@ -23,15 +23,13 @@ export const Avatar = ({
   size,
   title,
   rounded = true,
-}: AvatarProps): ReactElement => {
-  return (
-    <div className="avatar">
-      <div
-        data-testid="image-container"
-        className={`${avatarStyles({ size })} ${rounded ? 'rounded-full' : ''}`}
-      >
-        <img alt={title} src={imgSrc} title={title} />
-      </div>
+}: AvatarProps): ReactElement => (
+  <div className="avatar">
+    <div
+      data-testid="image-container"
+      className={`${avatarStyles({ size })} ${rounded ? 'rounded-full' : ''}`}
+    >
+      <img alt={title} src={imgSrc} title={title} />
     </div>
-  );
-};
+  </div>
+);

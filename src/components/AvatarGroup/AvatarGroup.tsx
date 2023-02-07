@@ -14,13 +14,11 @@ export const AvatarGroup = ({
   avatars,
   size = 'sm',
   counter,
-}: AvatarGroupProps): ReactElement => {
-  return (
-    <div className="avatar-group -space-x-6">
-      {avatars.map((avatar, index) => (
-        <Avatar size={size} key={`${avatar.title}-${index}`} {...avatar} />
-      ))}
-      {!!counter && <CounterAvatar counter={counter} size={size} />}
-    </div>
-  );
-};
+}: AvatarGroupProps): ReactElement => (
+  <div className="avatar-group -space-x-6">
+    {avatars.map((avatar, index) => (
+      <Avatar size={size} key={`${avatar.title}-${index}`} {...avatar} />
+    ))}
+    {!!counter && <CounterAvatar counter={counter} size={size} />}
+  </div>
+);

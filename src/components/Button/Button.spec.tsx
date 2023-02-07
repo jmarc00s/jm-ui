@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Button } from './Button';
 import { vi } from 'vitest';
+import { Button } from './Button';
 
 describe('<Button/>', () => {
   it('should render the button', () => {
@@ -22,7 +22,7 @@ describe('<Button/>', () => {
     render(
       <Button onClick={onClick} disabled>
         teste
-      </Button>
+      </Button>,
     );
     const btn = screen.getByRole('button');
     fireEvent.click(btn);

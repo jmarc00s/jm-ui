@@ -8,13 +8,11 @@ export type DividerProps = {
 export const Divider = ({
   children,
   horizontal,
-}: DividerProps): ReactElement => {
-  return (
-    <div
-      data-testid="divider"
-      className={`divider ${horizontal ? 'divider-horizontal' : ''}`}
-    >
-      {children}
-    </div>
-  );
-};
+}: DividerProps): ReactElement => (
+  <div
+    data-testid="divider"
+    className={`divider ${horizontal ? 'divider-horizontal' : ''}`}
+  >
+    {children}
+  </div>
+);

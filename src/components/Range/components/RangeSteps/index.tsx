@@ -9,7 +9,7 @@ export const RangeSteps = ({ step }: RangeStepsProps): ReactElement => {
 
   const numberOfSteps = Math.floor(100 / step) + 1;
 
-  for (let index = 0; index < numberOfSteps; index++) {
+  for (let index = 0; index < numberOfSteps; index + 1) {
     steps.push(<span key={index}> | </span>);
   }
 

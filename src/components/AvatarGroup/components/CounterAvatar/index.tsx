@@ -9,16 +9,14 @@ type CounterAvatarProps = VariantProps<typeof avatarStyles> & {
 export const CounterAvatar = ({
   counter,
   size,
-}: CounterAvatarProps): ReactElement => {
-  return (
-    <div data-testid="counter-avatar" className="avatar placeholder">
-      <div
-        className={`bg-neutral-focus text-neutral-content ${avatarStyles({
-          size,
-        })}`}
-      >
-        <span>+{counter}</span>
-      </div>
+}: CounterAvatarProps): ReactElement => (
+  <div data-testid="counter-avatar" className="avatar placeholder">
+    <div
+      className={`bg-neutral-focus text-neutral-content ${avatarStyles({
+        size,
+      })}`}
+    >
+      <span>+{counter}</span>
     </div>
-  );
-};
+  </div>
+);

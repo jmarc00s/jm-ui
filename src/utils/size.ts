@@ -1,5 +1,5 @@
 export const returnSizeClasses = (
-  prefix: string
+  prefix: string,
 ): {
   xs: string[];
   sm: string[];

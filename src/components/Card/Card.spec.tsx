@@ -12,7 +12,7 @@ describe('<Card />', () => {
     render(
       <Card>
         <Card.Body>Card</Card.Body>
-      </Card>
+      </Card>,
     );
     expect(screen.getByTestId('card-body')).toBeVisible();
   });
@@ -21,7 +21,7 @@ describe('<Card />', () => {
     render(
       <Card>
         <Card.Title>Card</Card.Title>
-      </Card>
+      </Card>,
     );
     expect(screen.getByTestId('card-title')).toBeVisible();
   });
@@ -30,7 +30,7 @@ describe('<Card />', () => {
     render(
       <Card>
         <Card.Actions>Card</Card.Actions>
-      </Card>
+      </Card>,
     );
     expect(screen.getByTestId('card-actions')).toBeVisible();
   });

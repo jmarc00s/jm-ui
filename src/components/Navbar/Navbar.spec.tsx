@@ -12,7 +12,7 @@ describe('<Navbar />', () => {
     render(
       <Navbar>
         <Navbar.Start>test</Navbar.Start>
-      </Navbar>
+      </Navbar>,
     );
     const navbarStart = screen.getByTestId('navbar-start');
     expect(navbarStart).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('<Navbar />', () => {
     render(
       <Navbar>
         <Navbar.Center>test</Navbar.Center>
-      </Navbar>
+      </Navbar>,
     );
     const navbarCenter = screen.getByTestId('navbar-center');
     expect(navbarCenter).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('<Navbar />', () => {
     render(
       <Navbar>
         <Navbar.End>test</Navbar.End>
-      </Navbar>
+      </Navbar>,
     );
     const navbarEnd = screen.getByTestId('navbar-end');
     expect(navbarEnd).toBeInTheDocument();

@@ -18,16 +18,14 @@ export const Link = ({
   color,
   underlineOnHover,
   ...rest
-}: LinkProps): ReactElement => {
-  return (
-    <a
-      role="link"
-      className={`${linkStyles({ color })} ${
-        underlineOnHover ? 'link-hover' : ''
-      }`}
-      {...rest}
-    >
-      {children}
-    </a>
-  );
-};
+}: LinkProps): ReactElement => (
+  <a
+    role="link"
+    className={`${linkStyles({ color })} ${
+      underlineOnHover ? 'link-hover' : ''
+    }`}
+    {...rest}
+  >
+    {children}
+  </a>
+);

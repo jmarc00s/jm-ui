@@ -36,7 +36,7 @@ const Dropdown = ({
       role="listbox"
       className={classNames(
         dropdownStyles({ direction }),
-        alignEnd && 'dropdown-end'
+        alignEnd && 'dropdown-end',
       )}
     >
       <Button onClick={handleLabelClick}>{label}</Button>
