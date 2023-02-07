@@ -1,7 +1,7 @@
 {
   "name": "@jmarc00s/jm-ui",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "prettier:fix": "prettier src/**/*.{js,jsx,ts,tsx} --write",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "test:ci": "vitest --run",
+    "test:ci": "set NODE_ENV=CI && vitest run",
     "prepare": "husky install",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}"
   },
@@ -96,7 +96,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run test",
       "prettier --write",
       "npm run lint -- --fix"
     ]

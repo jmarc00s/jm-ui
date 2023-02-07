@@ -17,7 +17,9 @@ export type AlertProps = Omit<AllHTMLAttributes<HTMLDivElement>, 'color'> &
     children: ReactNode;
   };
 
-export const Alert = ({ children, color, className, ...rest }: AlertProps) => (
+export const Alert = ({
+ children, color, className, ...rest
+}: AlertProps) => (
   <div className={alertStyles({ color })} {...rest}>
     {children}
   </div>
