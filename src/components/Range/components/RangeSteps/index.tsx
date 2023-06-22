@@ -9,10 +9,10 @@ export const RangeSteps = ({ step }: RangeStepsProps): ReactElement => {
 
   const numberOfSteps = Math.floor(100 / step) + 1;
 
-  for (let index = 0; index < numberOfSteps; index + 1) {
+  // eslint-disable-next-line no-plusplus
+  for (let index = 0; index < numberOfSteps; index++) {
     steps.push(<span key={index}> | </span>);
   }
-
   return (
     <div
       data-testid="ranger-steps-bar"
