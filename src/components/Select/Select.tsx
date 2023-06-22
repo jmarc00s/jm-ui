@@ -1,5 +1,11 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import React, { ReactElement, SelectHTMLAttributes } from 'react';
+import classNames from 'classnames';
+import React, {
+  forwardRef,
+  ReactElement,
+  Ref,
+  SelectHTMLAttributes,
+} from 'react';
 import { returnColorClasses, returnSizeClasses } from 'src/utils';
 
 const selectStyles = cva(['select', 'w-full'], {
@@ -21,15 +27,19 @@ export type SelectProps = Omit<
     bordered?: boolean;
   };
 
-export const Select = ({
-  label,
-  color,
-  size,
-  id,
-  children,
-  bordered = false,
-  ...rest
-}: SelectProps): ReactElement => (
+const SelectComponent = (
+  {
+    label,
+    color,
+    size,
+    id,
+    children,
+    bordered = false,
+    className,
+    ...rest
+  }: SelectProps,
+  ref: Ref<HTMLSelectElement>,
+): ReactElement => (
   <>
     {!!label?.length && (
       <label className="label" htmlFor={id}>
@@ -38,12 +48,17 @@ export const Select = ({
     )}
     <select
       data-testid="select"
-      className={`${selectStyles({ color, size })} ${
-        bordered ? 'select-bordered' : ''
-      }`}
+      className={classNames(
+        selectStyles({ color, size }),
+        bordered && 'select-bordered',
+        className,
+      )}
       {...rest}
+      ref={ref}
     >
       {children}
     </select>
   </>
 );
+
+export const Select = forwardRef(SelectComponent);

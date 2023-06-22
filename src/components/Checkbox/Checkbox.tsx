@@ -1,5 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import React, { InputHTMLAttributes } from 'react';
+import classNames from 'classnames';
+import React, { forwardRef, InputHTMLAttributes, Ref } from 'react';
 
 const checkboxStyles = cva(['checkbox'], {
   variants: {
@@ -30,23 +31,24 @@ export type CheckboxProps = VariantProps<typeof checkboxStyles> &
     label: string;
   };
 
-export const Checkbox = ({
-  label,
-  id,
-  color,
-  size,
-  ...rest
-}: CheckboxProps) => (
+const CheckboxComponent = (
+  // eslint-disable-next-line object-curly-newline
+  { label, id, color, size, className, ...rest }: CheckboxProps,
+  ref: Ref<HTMLInputElement>,
+) => (
   <div className="form-control">
     <label className="label cursor-pointer" htmlFor={id}>
       <input
         data-testid="checkbox"
         id={id}
         type="checkbox"
-        className={checkboxStyles({ color, size })}
+        className={classNames(checkboxStyles({ color, size }), className)}
+        ref={ref}
         {...rest}
       />
       <span className="label-text ml-4">{label}</span>
     </label>
   </div>
 );
+
+export const Checkbox = forwardRef(CheckboxComponent);
