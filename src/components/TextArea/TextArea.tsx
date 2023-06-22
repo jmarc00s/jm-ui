@@ -1,6 +1,11 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import classNames from 'classnames';
-import React, { ReactElement, TextareaHTMLAttributes } from 'react';
+import React, {
+  forwardRef,
+  ReactElement,
+  Ref,
+  TextareaHTMLAttributes,
+} from 'react';
 import { returnColorClasses, returnSizeClasses } from 'src/utils';
 
 const textAreaStyles = cva(['textarea'], {
@@ -24,16 +29,20 @@ export type TextAreaProps = Omit<
     resizable?: boolean;
   };
 
-export const TextArea = ({
-  color,
-  size,
-  bordered = false,
-  resizable = true,
-  label,
-  error,
-  id,
-  ...rest
-}: TextAreaProps): ReactElement => {
+const TextAreaComponent = (
+  {
+    color,
+    size,
+    bordered = false,
+    resizable = true,
+    label,
+    error,
+    id,
+    className,
+    ...rest
+  }: TextAreaProps,
+  ref: Ref<HTMLTextAreaElement>,
+): ReactElement => {
   const borderedClass = bordered && 'textarea-bordered';
   const resizeClass = !resizable && 'resize-none';
   const errorClass = error?.length && 'textarea-error';
@@ -43,6 +52,7 @@ export const TextArea = ({
     borderedClass,
     resizeClass,
     errorClass,
+    className,
   ];
 
   const labelClasses = ['label-text', error && 'text-error'];
@@ -54,7 +64,11 @@ export const TextArea = ({
           <span className={classNames(labelClasses)}>{label}</span>
         )}
       </label>
-      <textarea className={classNames(textAreaClasses)} {...rest}></textarea>
+      <textarea
+        ref={ref}
+        className={classNames(textAreaClasses)}
+        {...rest}
+      ></textarea>
       {error?.length && (
         <label htmlFor={id} className="label-text-alt text-error">
           {error}
@@ -63,3 +77,5 @@ export const TextArea = ({
     </div>
   );
 };
+
+export const TextArea = forwardRef(TextAreaComponent);
