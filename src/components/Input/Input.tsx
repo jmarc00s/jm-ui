@@ -1,5 +1,11 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import React, { InputHTMLAttributes, ReactElement } from 'react';
+import classNames from 'classnames';
+import React, {
+  forwardRef,
+  InputHTMLAttributes,
+  ReactElement,
+  Ref,
+} from 'react';
 
 const inputStyles = cva(['input w-full'], {
   variants: {
@@ -32,17 +38,20 @@ export type InputProps = VariantProps<typeof inputStyles> &
     htmlSize?: number | undefined;
   };
 
-export const Input = ({
-  variant,
-  color,
-  size = 'md',
-  className,
-  htmlSize,
-  label,
-  id,
-  errorMessage,
-  ...rest
-}: InputProps): ReactElement => (
+const InputComponent = (
+  {
+    variant,
+    color,
+    size = 'md',
+    className,
+    htmlSize,
+    label,
+    id,
+    errorMessage,
+    ...rest
+  }: InputProps,
+  ref: Ref<HTMLInputElement>,
+): ReactElement => (
   <>
     {!!label?.length && (
       <label className="label" htmlFor={id}>
@@ -53,15 +62,18 @@ export const Input = ({
     )}
     <input
       data-testid="input"
-      className={`${
-        errorMessage?.length && 'input-error placeholder:text-error'
-      } ${inputStyles({
-        variant,
-        color,
-        size,
-      })}`}
-      {...rest}
+      className={classNames(
+        errorMessage?.length && 'input-error placeholder:text-error',
+        inputStyles({
+          variant,
+          color,
+          size,
+        }),
+        className,
+      )}
       size={htmlSize}
+      ref={ref}
+      {...rest}
     />
     {!!errorMessage?.length && (
       <label className="label">
@@ -72,3 +84,5 @@ export const Input = ({
     )}
   </>
 );
+
+export const Input = forwardRef(InputComponent);
