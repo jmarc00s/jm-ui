@@ -20,7 +20,8 @@
     "./class-variance-authority": "./node_modules/class-variance-authority",
     "./react": "./node_modules/react",
     "./react-dom/client": "./node_modules/react-dom/client",
-    "./classnames": "./node_modules/classnames"
+    "./classnames": "./node_modules/classnames",
+    "./react-number-format": "./node_modules/react-number-format"
   },
   "main": "./dist/jm-ui.umd.js",
   "module": "./dist/jm-ui.es.js",
@@ -48,6 +49,7 @@
     "prettier": "^2.8.3",
     "react": ">=16",
     "react-dom": ">=16",
+    "react-number-format": "^5.2.2",
     "tailwindcss": "^3.2.4"
   },
   "peerDependencies": {
@@ -69,6 +71,7 @@
     "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
