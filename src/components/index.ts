@@ -5,6 +5,8 @@ export * from './Badge';
 export * from './Button';
 export * from './Card';
 export * from './Checkbox';
+export * from './CurrencyInput';
+export * from './DateInput';
 export * from './Divider';
 export * from './Input';
 export * from './Link';
