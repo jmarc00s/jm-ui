@@ -52,7 +52,7 @@ const InputComponent = (
   }: InputProps,
   ref: Ref<HTMLInputElement>,
 ): ReactElement => (
-  <>
+  <div className="flex flex-col w-full">
     {!!label?.length && (
       <label className="label" htmlFor={id}>
         <span className={`label-text ${errorMessage?.length && 'text-error'}`}>
@@ -73,6 +73,7 @@ const InputComponent = (
       )}
       size={htmlSize}
       ref={ref}
+      id={id}
       {...rest}
     />
     {!!errorMessage?.length && (
@@ -82,7 +83,7 @@ const InputComponent = (
         </span>
       </label>
     )}
-  </>
+  </div>
 );
 
 export const Input = forwardRef(InputComponent);
