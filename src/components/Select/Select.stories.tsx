@@ -38,3 +38,19 @@ Disabled.args = {
   bordered: true,
   disabled: true,
 };
+
+export const Error = Template.bind({});
+
+Error.args = {
+  children: (
+    <>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </>
+  ),
+  label: 'Error',
+  size: 'lg',
+  bordered: true,
+  errorMessage: 'Invalid field',
+};
