@@ -16,4 +16,5 @@ export * from './ProgressBar';
 export * from './Radio';
 export * from './Range';
 export * from './Select';
+export * from './SweetAlert';
 export * from './Toggle';
