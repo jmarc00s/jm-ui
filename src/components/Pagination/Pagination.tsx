@@ -15,7 +15,7 @@ export const Pagination = ({ pages = 1, onPageClick }: PaginationProps) => {
   };
 
   return (
-    <div className="join">
+    <div className="join" data-testid="pagination">
       {[
         Array.from(Array(pages).keys()).map((pageNumber) => (
           <button

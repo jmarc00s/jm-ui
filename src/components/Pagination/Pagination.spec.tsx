@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import { Pagination } from './Pagination';
 
 const props = {
-  onPageClick: () => jest.mock,
+  onPageClick: vi.fn(),
   pages: 10,
 };
 
@@ -13,10 +14,10 @@ describe('<Pagination />', () => {
     expect(screen.getByTestId('pagination')).toBeVisible();
   });
 
-  it('should call onLastPage when clicking on go to last page btton', () => {
+  it('should call onLastPage when clicking on go to last page btton', async () => {
     render(<Pagination {...props} />);
-    const pageButton = screen.getByRole('button', { name: '2' });
-    userEvent.click(pageButton);
-    expect(props.onPageClick).toBeCalledWith(1);
+    const pageButton = screen.getByText('2');
+    await userEvent.click(pageButton);
+    expect(props.onPageClick).toHaveBeenCalledWith(1);
   });
 });
