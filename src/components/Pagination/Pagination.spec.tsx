@@ -18,6 +18,6 @@ describe('<Pagination />', () => {
     render(<Pagination {...props} />);
     const pageButton = screen.getByText('2');
     await userEvent.click(pageButton);
-    expect(props.onPageClick).toHaveBeenCalledWith(1);
+    expect(props.onPageClick).toHaveBeenCalledWith(2);
   });
 });

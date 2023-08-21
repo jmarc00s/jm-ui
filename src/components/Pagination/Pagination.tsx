@@ -7,7 +7,7 @@ export type PaginationProps = {
 };
 
 export const Pagination = ({ pages = 1, onPageClick }: PaginationProps) => {
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState(1);
 
   const handlePageClick = (pageNumber: number): void => {
     setActiveItem(pageNumber);
@@ -17,7 +17,7 @@ export const Pagination = ({ pages = 1, onPageClick }: PaginationProps) => {
   return (
     <div className="join" data-testid="pagination">
       {[
-        Array.from(Array(pages).keys()).map((pageNumber) => (
+        Array.from({ length: pages }, (_, i) => i + 1).map((pageNumber) => (
           <button
             onClick={() => handlePageClick(pageNumber)}
             key={pageNumber}
@@ -26,7 +26,7 @@ export const Pagination = ({ pages = 1, onPageClick }: PaginationProps) => {
               pageNumber === activeItem && 'btn-active btn-primary',
             )}
           >
-            {pageNumber + 1}
+            {pageNumber}
           </button>
         )),
       ]}
