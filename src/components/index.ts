@@ -12,6 +12,7 @@ export * from './Input';
 export * from './Link';
 export * from './Modal';
 export * from './Navbar';
+export * from './Pagination';
 export * from './ProgressBar';
 export * from './Radio';
 export * from './Range';
