@@ -14,10 +14,27 @@ describe('<Pagination />', () => {
     expect(screen.getByTestId('pagination')).toBeVisible();
   });
 
-  it('should call onLastPage when clicking on go to last page btton', async () => {
+  it('should not call onPageClick when clicking in the same page twice', async () => {
+    render(<Pagination {...props} />);
+    const pageButton = screen.getByText('2');
+    await userEvent.click(pageButton);
+    await userEvent.click(pageButton);
+
+    expect(props.onPageClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call onPageClick when clicking on page button', async () => {
     render(<Pagination {...props} />);
     const pageButton = screen.getByText('2');
     await userEvent.click(pageButton);
     expect(props.onPageClick).toHaveBeenCalledWith(2);
+  });
+
+  it('should set active item when clicking on it', async () => {
+    render(<Pagination {...props} />);
+    const pageButton = screen.getByText('2');
+    await userEvent.click(pageButton);
+
+    expect(pageButton).toHaveClass('btn-active');
   });
 });

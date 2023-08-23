@@ -7,9 +7,11 @@ export type PaginationProps = {
 };
 
 export const Pagination = ({ pages = 1, onPageClick }: PaginationProps) => {
-  const [activeItem, setActiveItem] = useState(1);
+  const [activeItem, setActiveItem] = useState<number>(1);
 
   const handlePageClick = (pageNumber: number): void => {
+    if (pageNumber === activeItem) return;
+
     setActiveItem(pageNumber);
     onPageClick(pageNumber);
   };
