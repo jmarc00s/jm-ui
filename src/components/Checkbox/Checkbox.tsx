@@ -37,7 +37,7 @@ const CheckboxComponent = (
   ref: Ref<HTMLInputElement>,
 ) => (
   <div className="form-control">
-    <label className="label cursor-pointer" htmlFor={id}>
+    <label className="label cursor-pointer justify-start p-0" htmlFor={id}>
       <input
         data-testid="checkbox"
         id={id}
